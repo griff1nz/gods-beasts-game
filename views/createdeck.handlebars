@@ -1,0 +1,30 @@
+ <section>
+    <h2>Game Rules</h2>
+     <p>Each player starts with 10,000 life points and with 10 cards</p>
+    <ol>
+        </li>User plays first and chooses a God or Beast card to play against the computer
+        <li>If both attack: the card with the highest number of attack points wins and absorbs loser’s attack points into their life points</li>
+        <li>If one attacks and one defends: If the attacker loses, half of the attack points from that card are taken from their total life points. If the defender loses, the card’s defense points are subtracted from their total life points</li>
+        <li>If both attack or defend points are the same: both players retreat, no one wins or loses</li>
+    </ol>
+    <p>The game ends when there are no more cards or life points</p>
+</section>
+ <section class="god-carousel-container">
+      <h2>Characters</h2>
+      <!-- arrow buttons -->
+        <button class="pre-btn"><img src="/images/arrow.png"/></button>
+        <button class="nxt-btn"><img src="/images/arrow.png"/></button>
+
+        <div class="carousel">
+            {{#each cards as |card|}}
+            {{> god-card}}
+            {{/each}}
+        </div>
+</section>
+<section class="play-btn-container">
+    <a href="/play">
+        <button type="button" class="btn btn-primary btn-lg" id="new-game-btn">Play</button>
+    </a>
+</section>
+
+<script src="/js/createdeck.js"></script>

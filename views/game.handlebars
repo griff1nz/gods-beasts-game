@@ -1,0 +1,74 @@
+<section class="game-screen">
+      {{!-- <div> --}}
+        {{!-- //button for new set of 10 cards// --}}
+        {{!-- <button type="button" class="get-new-10" id="get-new-10">New 10 Cards</button> 
+      </div> --}}
+
+  <section class="opponent">
+        <div class="opponent-life-points">
+          <h3>Computer Life points<br>
+          {{!-- need to insert life points --}} </h3>
+          <p></p>
+        </div>
+        <div class="opponent-deck-container">
+          <div>
+          </div>
+        </div>
+      </section>
+
+      <section class="center">
+        <div class="opponent-card">
+          {{!-- computer's choice shows up here --}}
+        </div>
+        <div class="user-card">
+        {{!-- user's choice shows up here --}}
+        </div>
+      </section>
+
+      <section class="user">
+        <div class="user-life-points">
+          <h3>Your Life points<br>
+          {{!-- life points show here --}}
+          </h3>
+          <p></p>
+          <p>Wins <span class="win"></span></p>
+          <p>Losses <span class="losses"></span></p>
+          <p>Ties <span class="ties"></span></p>
+          <div class="button-container hidden">
+            <button type="button" class="btn btn-primary" id="attackButton">Attack</button>
+            <button type="button" class="btn btn-primary" id="defendButton">Defend</button>
+          </div>
+        </div>
+        <div class="user-deck-container">
+          {{#each userCards}}
+            <div class="card-mini user-card" id="{{id}}">
+              <div class="god-card-mini card-mini {{class}}">
+                <div class="card-content">
+                  <div class="name-class">
+                    <h3>{{name}}</h3>
+                  </div>
+                  <div class="points-mini">
+                    <p data-attack="{{attack_points}}">Attack: {{attack_points}}</p>
+                    <p data-defense="{{defense_points}}">Defend: {{defense_points}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+      </section>
+  <audio id="win-sound" src="/sound-bites/YouWin-SoundEffect.mp3"></audio>
+  <audio id="lose-sound" src="/sound-bites/Defeat-SoundEffect.mp3"></audio>
+</section>
+
+<section class="game-over hidden">
+  <br>
+  <h2 style="font-family: 'Italianno', cursive;"id= "game-over-heading">Result</h2>
+  <h3 style="font-family: inherit;">Game Over</h3>
+  <p>final score here</p> 
+  <button type="button" class="btn btn-primary" id="game-screen-new-game">New Game</button>
+  <a href="/">
+  <button type="button" class="btn btn-primary" id="game-screen-home">Home</button>
+  </a>
+</section>
+
+<script src="/js/game.js"></script>
